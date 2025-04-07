@@ -30,12 +30,13 @@ main {
 
 .card {
         background-color: white;
-        position: relative;
+        
 }
 
 .card-img {
     width : 200px;
     padding : 10px;
+    position: relative;
 }
 
 .card-text {
@@ -49,4 +50,13 @@ main {
 
 h-100 {
     height: 100px;
+}
+
+.button{
+    width:20px;
+    height: 20px;
+    position: absolute;
+    display: flex;
+    top : 130px;
+    margin-left : 80px;
 }
