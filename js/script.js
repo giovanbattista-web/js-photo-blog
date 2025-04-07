@@ -37,8 +37,12 @@ const myName = [
 	}
 ]
 
-// recupero dal dom gli elementi che mi servono
+// recupero degli elementi del dom che mi servono
 const contenitore = document.getElementById('container');
+const identificativo = document.getElementById('id');
+const titolo = document.getElementById('title');
+const data = document.getElementById('date');
+const immagine = document.getElementById('url');
 
-// dichiaro una variabile vuota che mi conterrà le card 
-let cards = '';
+// 
+
