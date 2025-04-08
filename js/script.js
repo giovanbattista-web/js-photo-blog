@@ -37,7 +37,7 @@ const myName = [
 	}
 ]
 
-// recupero degli elementi del dom 
+// RECUPERO DEGLI ELEMENTI EL
 const contenitore = document.getElementById('row');
 
 // DICHIARO UNA VARIABILE VUOTA CHE MI CONTERRA' LE CARD
@@ -53,11 +53,13 @@ const { id, title, date, url} = myName[i];
 cards += `<div class="col">
                 <div class="card">
                   <div class="card-img">
-                    <img src= "${url}" class="img-fluid h-100" alt="">
+                    <img src= "${url}" class="img-fluid h-200" alt="">
                   </div>
                   <div class="card-text">
                     <img class="button" src="./img/pin.svg" alt="">
-                  </div>
+				    <h6>${date}</h6>
+					<h3>${title}</h3>
+				  </div>
                 </div>
               </div>`
 }
