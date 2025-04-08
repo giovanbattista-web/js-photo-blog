@@ -13,10 +13,11 @@ header{
 
 .text-center {
     text-align: center;
+    font-family: 'Edu Tas Beginner', sans-serif;
 }
 
 .content{
-    padding : 30px;
+    padding : 25px;
 }
 
 /* main */
@@ -46,7 +47,8 @@ main {
 
 .card-text {
     padding : 10px;
-    width : calc(100% - 100px)
+    width : calc(100% - 100px);
+    font-family: 'Sometype Mono', monospace;
 }
 
 .img-fluid {
