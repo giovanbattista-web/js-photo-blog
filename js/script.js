@@ -51,12 +51,13 @@ const { id, title, date, url} = myName[i];
 
 // CREO LA CARD 
 cards += `<div class="col">
-                <div class="card">
+                <div class="card position-relative">
                   <div class="card-img">
                     <img src= "${url}" class="img-fluid h-200" alt="">
                   </div>
                   <div class="card-text">
-                    <img class="button" src="./img/pin.svg" alt="">
+                    <img class="button position-absolute d-flex" src="./img/pin.svg" alt="">
+				    <h6 class="visibility">${id}</h6>
 				    <h6>${date}</h6>
 					<h3>${title}</h3>
 				  </div>

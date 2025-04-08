@@ -37,12 +37,12 @@ main {
 
 .card {
     background-color: white;
-
 }
 
 .card-img {
     width: 200px;
     padding: 10px;
+    padding-bottom: 2px;
 }
 
 .position-relative {
@@ -50,8 +50,9 @@ main {
 }
 
 .card-text {
-    padding: 15px;
+    padding: 10px;
     font-family: 'Sometype Mono', monospace;
+    font-family: 'Edu Tas Beginner', sans-serif;
 }
 
 .img-fluid {
@@ -62,15 +63,9 @@ main {
 .button {
     width: 20px;
     height: 20px;
-    position: absolute;
-    top: 130px;
     margin-left: 80px;
 }
-
-
-.flex-wrap {
-    flex-wrap: wrap;
-}
+    
 
 .d-flex {
     display: flex;
@@ -78,4 +73,13 @@ main {
 
 .h-200 {
     height: 200px;
+}
+
+.visibility {
+    visibility: hidden;
+}
+
+.position-absolute {
+    position : absolute;
+    top : 0px;
 }
