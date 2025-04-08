@@ -37,12 +37,33 @@ const myName = [
 	}
 ]
 
-// recupero degli elementi del dom che mi servono
-const contenitore = document.getElementById('container');
-const identificativo = document.getElementById('id');
-const titolo = document.getElementById('title');
-const data = document.getElementById('date');
-const immagine = document.getElementById('url');
+// recupero degli elementi del dom 
+const contenitore = document.getElementById('row');
 
-// 
+// DICHIARO UNA VARIABILE VUOTA CHE MI CONTERRA' LE CARD
+let cards = '';
+
+// CICLO L'ARRAY
+for (let i = 0; i < myName.length; i++) {
+
+// DESTRUTTURO L'ELEMENTO CHE STO ATTUALMENTE CICLANDO
+const { id, title, date, url} = myName[i];
+
+// CREO LA CARD 
+cards += `<div class="col">
+                <div class="card">
+                  <div class="card-img">
+                    <img src= "${url}" class="img-fluid h-100" alt="">
+                  </div>
+                  <div class="card-text">
+                    <img class="button" src="./img/pin.svg" alt="">
+                  </div>
+                </div>
+              </div>`
+}
+
+// INSERIRE NEL DOM IL CONTENUTO DI cards
+contenitore.innerHTML = cards;
+
+
 
