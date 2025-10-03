@@ -37,7 +37,7 @@ const myName = [
 	}
 ]
 
-// RECUPERO DEGLI ELEMENTI EL
+// RECUPERO DEGLI ELEMENTI 
 const contenitore = document.getElementById('row');
 
 // DICHIARO UNA VARIABILE VUOTA CHE MI CONTERRA' LE CARD
@@ -46,16 +46,16 @@ let cards = '';
 // CICLO L'ARRAY
 for (let i = 0; i < myName.length; i++) {
 
-// DESTRUTTURO L'ELEMENTO CHE STO ATTUALMENTE CICLANDO
-const { id, title, date, url} = myName[i];
+	// DESTRUTTURO L'ELEMENTO CHE STO ATTUALMENTE CICLANDO
+	const { id, title, date, url } = myName[i];
 
-// CREO LA CARD 
-cards += `<div class="col">
-                <div class="card position-relative">
+	// CREO LA CARD 
+	cards += `<div class="col">
+                <div class="card">
                   <div class="card-img">
-                    <img src= "${url}" class="img-fluid h-200" alt="">
-                  </div>
-                  <div class="card-text">
+				   <img src= "${url}" class="img-fluid h-150" alt="">
+				  </div>
+                   <div class="card-text">
                     <img class="button position-absolute d-flex" src="./img/pin.svg" alt="">
 				    <h6 class="visibility">${id}</h6>
 				    <h6>${date}</h6>
@@ -67,6 +67,9 @@ cards += `<div class="col">
 
 // INSERIRE NEL DOM IL CONTENUTO DI cards
 contenitore.innerHTML = cards;
+
+
+
 
 
 

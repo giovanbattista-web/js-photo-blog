@@ -5,8 +5,6 @@
 }
 
 /* header */
-
-
 header {
     background-image: url("../img/wall.png");
 }
@@ -26,17 +24,22 @@ body {
     background-image: url("../img/cork.png");
 }
 
+main {
+    margin-top: 40px;
+}
+
 .container {
     max-width: 700px;
     margin: 0 auto;
 }
 
-main {
-    margin-top: 40px;
+.h-150 {
+    height: 150px;
 }
 
 .card {
     background-color: white;
+    position: relative;
 }
 
 .card-img {
@@ -45,8 +48,8 @@ main {
     padding-bottom: 2px;
 }
 
-.position-relative {
-    position: relative;
+.img-fluid {
+    width: 100%;
 }
 
 .card-text {
@@ -55,24 +58,14 @@ main {
     font-family: 'Edu Tas Beginner', sans-serif;
 }
 
-.img-fluid {
-    width: 100%;
-}
-
-
 .button {
     width: 20px;
     height: 20px;
     margin-left: 80px;
 }
-    
 
 .d-flex {
     display: flex;
-}
-
-.h-200 {
-    height: 150px;
 }
 
 .visibility {
@@ -80,8 +73,8 @@ main {
 }
 
 .position-absolute {
-    position : absolute;
-    top : 0px;
+    position: absolute;
+    top: 0px;
 }
 
 .flex-wrap {
@@ -89,5 +82,5 @@ main {
 }
 
 .gap {
-    gap : 10px;
+    gap: 10px;
 }
