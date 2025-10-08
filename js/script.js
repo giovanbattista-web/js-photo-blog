@@ -1,73 +1,68 @@
-const myName = [
-	{
-		"id": 1,
-		"title": "Skate Park",
-		"date": "01-07-2024",
-		"url": "https://marcolanci.it/boolean/assets/pictures/1.png"
-	},
-	{
-		"id": 2,
-		"title": "Passeggiata",
-		"date": "16-07-2024",
-		"url": "https://marcolanci.it/boolean/assets/pictures/2.png"
-	},
-	{
-		"id": 3,
-		"title": "Alpi",
-		"date": "01-07-2024",
-		"url": "https://marcolanci.it/boolean/assets/pictures/3.png"
-	},
-	{
-		"id": 4,
-		"title": "Sagra",
-		"date": "21-08-2024",
-		"url": "https://marcolanci.it/boolean/assets/pictures/4.png"
-	},
-	{
-		"id": 5,
-		"title": "Watergun",
-		"date": "23-08-2024",
-		"url": "https://marcolanci.it/boolean/assets/pictures/5.png"
-	},
-	{
-		"id": 6,
-		"title": "Riviera",
-		"date": "30-08-2024",
-		"url": "https://marcolanci.it/boolean/assets/pictures/6.png"
-	}
-]
+// Fase di preparazione
+const endpoint = "https://lanciweb.github.io/demo/api/pictures/";
 
-// RECUPERO DEGLI ELEMENTI 
-const contenitore = document.getElementById('row');
+// Recupero degli elementi di interesse dal DOM
+const overlay = document.querySelector('.overlay');
+const preview = document.querySelector('.preview');
+const container = document.querySelector('.container');
+const closeButton = document.querySelector('.close-button');
 
-// DICHIARO UNA VARIABILE VUOTA CHE MI CONTERRA' LE CARD
-let cards = '';
+axios.get(endpoint).then(res => {
+	const images = res.data;
 
-// CICLO L'ARRAY
-for (let i = 0; i < myName.length; i++) {
+	let figures = '';
 
-	// DESTRUTTURO L'ELEMENTO CHE STO ATTUALMENTE CICLANDO
-	const { id, title, date, url } = myName[i];
+	images.forEach(image => {
 
-	// CREO LA CARD 
-	cards += `<div class="col">
-                <div class="card">
-                  <div class="card-img">
-				   <img src= "${url}" class="img-fluid h-150" alt="">
-				  </div>
-                   <div class="card-text">
-                    <img class="button position-absolute d-flex" src="./img/pin.svg" alt="">
-				    <h6 class="visibility">${id}</h6>
-				    <h6>${date}</h6>
+		const { id, title, url, date } = image;
+
+		figures += `
+	            <figure data-id="${id}">
+				  <img src = "img/pin.svg" alt = "pin" class="pin">
+				  <img src = "${url}" alt= "${title}" class="pic">
+				  <figcaption>
+				    <time>${date}</time>
 					<h3>${title}</h3>
-				  </div>
-                </div>
-              </div>`
-}
+                  </figcaption>
+				</figure>
+               `
+	})
 
-// INSERIRE NEL DOM IL CONTENUTO DI cards
-contenitore.innerHTML = cards;
+	container.innerHTML = figures;
 
+	figures = document.querySelectorAll('figure');
+
+
+	// Per ognuna delle figure
+	figures.forEach(figure => {
+		figure.addEventListener('click', () => {
+
+			// Recupera l'immagine cliccata
+			const clickedPicture = figure.querySelector('img.pic');
+
+			// Copia "src" e "alt" nell'immagine di preview
+			preview.alt = clickedPicture.alt;
+			preview.src = clickedPicture.src;
+
+			// Compare l'overlay togliendo la classe 'hidden'
+			overlay.classList.remove('hidden');
+
+			// BONUS : blocco la scrollbar 
+			document.body.style.overflow = 'hidden';
+		})
+
+	});
+
+	closeButton.addEventListener('click', () => {
+		// L'overlay sparisce nuovamente aggiungendo la classe 'hidden'
+		overlay.classList.add('hidden');
+
+		// BONUS : ripristino della scrollbar
+		document.body.style.overflow = 'auto';
+
+	})
+
+})
 
 
 

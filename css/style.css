@@ -1,86 +1,130 @@
+/* CSS Reset */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* header */
-header {
-    background-image: url("../img/wall.png");
-}
-
-.text-center {
-    text-align: center;
-    font-family: 'Edu Tas Beginner', sans-serif;
-    font-size: 60px;
-}
-
-.content {
-    padding: 10px;
-}
-
-/* main */
+/* Generics */
 body {
-    background-image: url("../img/cork.png");
+    font-family: 'Edu Tas Beginner', sans-serif;
+}
+
+header {
+    height: 150px;
+    padding: 20px;
+    text-align: center;
+    background-color: lightgray;
+    background-image: url("../img/wall.png");
+    background-size: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
-    margin-top: 40px;
+    background-color: sandybrown;
+    background-image: url("../img/cork.png");
+    background-size: 30%;
+    min-height: calc(100vh - 150px);
+    padding: 50px;
+}
+
+h1 {
+    font-size: 88px;
+    font-weight: 700;
 }
 
 .container {
-    max-width: 700px;
     margin: 0 auto;
-}
-
-.h-150 {
-    height: 150px;
-}
-
-.card {
-    background-color: white;
-    position: relative;
-}
-
-.card-img {
-    width: 190px;
-    padding: 10px;
-    padding-bottom: 2px;
-}
-
-.img-fluid {
-    width: 100%;
-}
-
-.card-text {
-    padding: 10px;
-    font-family: 'Sometype Mono', monospace;
-    font-family: 'Edu Tas Beginner', sans-serif;
-}
-
-.button {
-    width: 20px;
-    height: 20px;
-    margin-left: 80px;
-}
-
-.d-flex {
+    max-width: 936px;
     display: flex;
-}
-
-.visibility {
-    visibility: hidden;
-}
-
-.position-absolute {
-    position: absolute;
-    top: 0px;
-}
-
-.flex-wrap {
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
 }
 
-.gap {
-    gap: 10px;
+/* Figures */
+figure {
+    width: 296px;
+    height: 360px;
+    background-color: white;
+    padding: 16px;
+    box-shadow: 2px 3px 1.5px rgba(0, 0, 0, 0.25);
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+figure:hover {
+    scale: 1.1;
+    rotate: 10deg;
+    z-index: 1;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+figure:hover .pin {
+    display: none;
+}
+
+img.pic {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+img.pin {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    translate: -50%;
+}
+
+figcaption {
+    text-transform: capitalize;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+time {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(117, 117, 117);
+    font-family: 'Sometype Mono', 'monospace';
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.overlay img {
+    max-height: 100%;
+}
+
+.overlay .close-button {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    translate: -50%;
+    font-size: 24px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.overlay.hidden {
+    display: none;
 }

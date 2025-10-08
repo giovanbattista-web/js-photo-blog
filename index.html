@@ -4,52 +4,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Blog</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Estate 2024</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Edu+TAS+Beginner:regular,500,600,700" rel="stylesheet">
   <link
-    href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+    href="https://fonts.googleapis.com/css?family=Sometype+Mono:regular,500,600,700,italic,500italic,600italic,700italic"
     rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@400..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
-    rel="stylesheet">
+
+  <!-- Link -->
   <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Axios -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js'
+    integrity='sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ=='
+    crossorigin='anonymous'></script>
+
 </head>
 
 <body>
-
-  <!-- header -->
   <header>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h1 class="text-center content ">ESTATE '24</h1>
-        </div>
-      </div>
-    </div>
+    <h1>ESTATE '24</h1>
   </header>
-
-  <!-- main -->
   <main>
-    <div class="container d-flex">
-      <div class="row d-flex flex-wrap gap" id="row">
-        <!--
-        <div class="col">
-          <div class="card">
-            <div class="card-img">
-              <img src="https://marcolanci.it/boolean/assets/pictures/1.png" class="img-fluid h-150" alt="">
-            </div>
-            <div class="card-text">
-                  <img class="button" src="./img/pin.svg" alt="">
-            </div>
-          </div>
-        </div>
-        -->
-      </div>
+    <div class="container">
+      <!-- Foto qui -->
     </div>
   </main>
+  <div class="overlay hidden">
+    <button class="close-button">Chiudi</button>
+    <img src="" alt="preview">
+  </div>
 
   <script src="./js/script.js"></script>
 </body>
